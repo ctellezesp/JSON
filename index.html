@@ -17,8 +17,16 @@
 				if(this.readyState === 4 && this.status === 200){
 					//actualizar contenido
 					let data = JSON.parse(this.responseText);
+					let emptyDiv = document.getElementById("loaded-info");
+
 					console.log(data);
-					let html = data.
+					let html = "";
+					data.forEach(function(person){
+						html += "<p>";
+						html += person.nombre + " " + person.apellido;
+						html += "</p>";
+					});
+					emptyDiv.insertAdjacentHTML('beforeend', html);
 					//esconder el boton
 				}
 				else {
