@@ -16,7 +16,9 @@
 			xhr.onload = function(){
 				if(this.readyState === 4 && this.status === 200){
 					//actualizar contenido
-					console.log("Cambiando texto");
+					let data = JSON.parse(this.responseText);
+					console.log(data);
+					let html = data.
 					//esconder el boton
 				}
 				else {
