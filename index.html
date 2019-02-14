@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JSON and AJAX</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<script type="text/javascript">
+		function loadData(){
+			//crear una petición
+			let xhr = new XMLHttpRequest();
+			xhr.open("GET", "https://gitlab.com/ctellezesp/index.json");
+			xhr.onreadystatechange = function(){
+				console.log(this.readyState, this.status, this.statusText);
+			}
+
+			//procesar la petición
+			xhr.onload = function(){
+				if(this.readyState === 4 && this.status === 200){
+					//actualizar contenido
+					console.log("Cambiando texto");
+					//esconder el boton
+				}
+				else {
+					//error
+					alert("ERROR: " + this.status);
+				}
+			}
+
+			//enviar la petición
+			xhr.send();
+		}
+
+		function changeText(response){
+
+		}
+	</script>
+</head>
+<body>
+	<h1>JSON and AJAX</h1>
+	<span>Permitir que AJAX modifique el contenido</span><br>
+	<button id="btn" type="button" onclick="loadData()">Modificar info sin recargar la pantalla</button>
+
+	<div id="loaded-info"></div>
+</body>
+</html>
