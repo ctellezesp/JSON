@@ -25,6 +25,7 @@
 						html += "<p>";
 						html += person.nombre + " " + person.apellido;
 						html += "</p>";
+						html += person.hobbies[0];
 					});
 					emptyDiv.insertAdjacentHTML('beforeend', html);
 					//esconder el boton
@@ -33,6 +34,10 @@
 					//error
 					alert("ERROR: " + this.status);
 				}
+			}
+
+			xhr.onerror = function(){
+				alert("La conexión ha fallado");
 			}
 
 			//enviar la petición
