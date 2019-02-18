@@ -50,8 +50,14 @@
 		function sendCat(){
 			let xhr = new XMLHttpRequest();
 			xhr.open("POST", "http://10.24.43.221:300/kittens");
+			xhr.setRequestHeader("content-type", "application/json");
 			xhr.onload = function(){
-
+				if(this.readyState === 4 && this.status === 200){
+					alert(this.responseText);
+				}
+				else{
+					alert("Error:" + this.status);
+				}
 			};
 
 			xhr.onerror = function(){
