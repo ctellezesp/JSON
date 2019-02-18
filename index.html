@@ -46,6 +46,27 @@
 		function changeText(response){
 
 		}
+
+		function sendCat(){
+			let xhr = new XMLHttpRequest();
+			xhr.open("POST", "http://10.24.43.221:300/kittens");
+			xhr.onload = function(){
+
+			};
+
+			xhr.onerror = function(){
+				alert("La conexión ha fallado");
+			};
+
+			let name = document.getElementById("name").value;
+			let cutennes = document.getElementById("cutennes").value;
+			let color = document.getElementById("color").value;
+			let owner = document.getElementById("owner").value;
+			let explodes = document.getElementById("explodes").checked;
+			let data = {name, cutennes, color, owner, explodes};
+			xhr.send(data);
+			//http://10.24.43,221:300/kittens
+		}
 	</script>
 </head>
 <body>
@@ -53,6 +74,14 @@
 	<span>Permitir que AJAX modifique el contenido</span><br>
 	<button id="btn" type="button" onclick="loadData()">Modificar info sin recargar la pantalla</button>
 
-	<div id="loaded-info"></div>
+	<div id="loaded-info"></div><br><br>
+	<form>
+		Name: <input type="text" id="name"><br>
+		Cuteness: <input type="text" id="cutennes"><br>
+		Color: <input type="text" id="color"><br>
+		Owner: <input type="text" id="owner"><br>
+		Explode<input type="checkbox" id="explode" checked><br>
+		<button type="button" onclick="sendCat()">Crear gatito</button>
+	</form>
 </body>
 </html>

@@ -1,7 +1,7 @@
 [{
 	"nombre": "Carlos",
 	"apellido": "Tellez",
-	"hobbies": ["Soccer", "Musica", "TV"]
+	"gustos": ["Soccer", "Musica", "TV"]
 },
 {
 	"nombre": "Arturo",
