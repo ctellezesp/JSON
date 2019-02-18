@@ -63,7 +63,10 @@
 			let color = document.getElementById("color").value;
 			let owner = document.getElementById("owner").value;
 			let explodes = document.getElementById("explodes").checked;
-			let data = {name, cutennes, color, owner, explodes};
+			let obj = {name, cutennes, color, owner, explodes};
+			let data = JSON.stringify(obj);
+			console.log(obj);
+			console.log(data);
 			xhr.send(data);
 			//http://10.24.43,221:300/kittens
 		}
