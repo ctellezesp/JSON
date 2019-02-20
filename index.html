@@ -49,7 +49,7 @@
 
 		function sendCat(){
 			let xhr = new XMLHttpRequest();
-			xhr.open("POST", "http://10.24.43.221:300/kittens");
+			xhr.open("POST", "http://10.24.43.221:3000/kittens");
 			xhr.setRequestHeader("content-type", "application/json");
 			xhr.onload = function(){
 				if(this.readyState === 4 && this.status === 200){
@@ -86,7 +86,7 @@
 	<div id="loaded-info"></div><br><br>
 	<form>
 		Name: <input type="text" id="name"><br>
-		Cuteness: <input type="text" id="cutennes"><br>
+		Cuteness: <input type="number" id="cutennes"><br>
 		Color: <input type="text" id="color"><br>
 		Owner: <input type="text" id="owner"><br>
 		Explode<input type="checkbox" id="explodes" checked><br>
